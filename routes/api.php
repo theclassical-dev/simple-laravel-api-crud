@@ -25,22 +25,6 @@ Route::get('/posts', function(){
 
 Route::post('/addPost', [App\Http\Controllers\PostController::class, 'addPost']);
 Route::get('/addGet', [App\Http\Controllers\PostController::class, 'addGet']);
-
-// Route::post('/posts', function(){
-//     return Post::create([
-//         'title' => request('title'),
-//         'content' => request('content'),
-//     ]);
-// });
-
-// Route::put('/posts/{post}', function(Post $post){
-
-//     $success = $post->update([
-//         'title' => request('title'),
-//         'content' => request('content'),
-//     ]);
-
-//     return [
-//         'success' => $success,
-//     ];
-// });
+Route::put('/updatePost/{post}', [App\Http\Controllers\PostController::class, 'updatePost']);
+Route::delete('/deletePost/{post}', [App\Http\Controllers\PostController::class, 'deletePost']);
+Route::delete('/deleteAllPost', [App\Http\Controllers\PostController::class, 'deleteAllPost']);
